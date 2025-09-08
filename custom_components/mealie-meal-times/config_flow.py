@@ -10,11 +10,18 @@ from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
-from .const import DOMAIN, LOGGER, MIN_REQUIRED_MEALIE_VERSION, BREAKFAST_TIME, LUNCH_TIME, DINNER_TIME, SIDE_TIME
+from .const import (
+    DOMAIN,
+    LOGGER,
+    MIN_REQUIRED_MEALIE_VERSION,
+    BREAKFAST_TIME,
+    LUNCH_TIME,
+    DINNER_TIME,
+    SIDE_TIME,
+)
 from .utils import create_version
 
 from homeassistant.helpers import selector
-
 
 
 OPTIONS_SCHEMA = vol.Schema(
@@ -90,7 +97,7 @@ class MealieConfigFlow(ConfigFlow, domain=DOMAIN):
                 await self.async_set_unique_id(user_id)
                 self._abort_if_unique_id_configured()
                 return self.async_create_entry(
-                    title="Mealie",
+                    title="Mealie Meal Times",
                     data=user_input,
                 )
         return self.async_show_form(
