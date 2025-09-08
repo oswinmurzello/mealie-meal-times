@@ -3,33 +3,40 @@
 from collections.abc import Mapping
 from typing import Any
 
-from aiomealie import MealieAuthenticationError, MealieClient, MealieConnectionError
+from aiomealie import (
+    MealieAuthenticationError,
+    MealieClient,
+    MealieConnectionError,
+    MealplanEntryType,
+)
 import voluptuous as vol
 
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL
+from homeassistant.helpers import selector
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 
-from .const import (
-    DOMAIN,
-    LOGGER,
-    MIN_REQUIRED_MEALIE_VERSION,
-    BREAKFAST_TIME,
-    LUNCH_TIME,
-    DINNER_TIME,
-    SIDE_TIME,
-)
+from .const import DOMAIN, LOGGER, MEAL_TIME, MIN_REQUIRED_MEALIE_VERSION
 from .utils import create_version
-
-from homeassistant.helpers import selector
-
 
 OPTIONS_SCHEMA = vol.Schema(
     {
-        vol.Optional(BREAKFAST_TIME, default="9:00 AM"): selector.TimeSelector(),
-        vol.Optional(LUNCH_TIME, default="12:00 PM"): selector.TimeSelector(),
-        vol.Optional(DINNER_TIME, default="7:00 PM"): selector.TimeSelector(),
-        vol.Optional(SIDE_TIME, default="5:00 PM"): selector.TimeSelector(),
+        vol.Optional(
+            MEAL_TIME[MealplanEntryType.BREAKFAST].text,
+            default=MEAL_TIME[MealplanEntryType.BREAKFAST].default,
+        ): selector.TimeSelector(),
+        vol.Optional(
+            MEAL_TIME[MealplanEntryType.LUNCH].text,
+            default=MEAL_TIME[MealplanEntryType.LUNCH].default,
+        ): selector.TimeSelector(),
+        vol.Optional(
+            MEAL_TIME[MealplanEntryType.DINNER].text,
+            default=MEAL_TIME[MealplanEntryType.DINNER].default,
+        ): selector.TimeSelector(),
+        vol.Optional(
+            MEAL_TIME[MealplanEntryType.SIDE].text,
+            default=MEAL_TIME[MealplanEntryType.SIDE].default,
+        ): selector.TimeSelector(),
     }
 )
 
@@ -40,6 +47,7 @@ USER_SCHEMA = vol.Schema(
         vol.Optional(CONF_VERIFY_SSL, default=True): bool,
     }
 ).extend(OPTIONS_SCHEMA.schema)
+
 REAUTH_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_API_TOKEN): str,
@@ -97,7 +105,7 @@ class MealieConfigFlow(ConfigFlow, domain=DOMAIN):
                 await self.async_set_unique_id(user_id)
                 self._abort_if_unique_id_configured()
                 return self.async_create_entry(
-                    title="Mealie Meal Times",
+                    title="Mealie",
                     data=user_input,
                 )
         return self.async_show_form(

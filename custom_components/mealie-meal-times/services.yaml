@@ -4,7 +4,7 @@ get_mealplan:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     start_date:
       selector:
         date:
@@ -18,7 +18,7 @@ get_recipe:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     recipe_id:
       required: true
       selector:
@@ -30,7 +30,7 @@ get_recipes:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     search_terms:
       required: false
       selector:
@@ -51,7 +51,7 @@ import_recipe:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     url:
       required: true
       selector:
@@ -66,7 +66,7 @@ set_random_mealplan:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     date:
       selector:
         date:
@@ -86,7 +86,7 @@ set_mealplan:
       required: true
       selector:
         config_entry:
-          integration: mealie-meal-times
+          integration: mealie
     date:
       selector:
         date:
