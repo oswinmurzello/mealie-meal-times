@@ -56,7 +56,7 @@ class MealieDataUpdateCoordinator[_DataT](DataUpdateCoordinator[_DataT]):
             hass,
             LOGGER,
             config_entry=config_entry,
-            name=f"Mealie {self._name}",
+            name=f"Mealie Meal Times {self._name}",
             update_interval=self._update_interval,
         )
         self.client = client

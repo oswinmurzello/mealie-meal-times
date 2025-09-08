@@ -77,7 +77,7 @@ class MealieConfigFlow(ConfigFlow, domain=DOMAIN):
                 await self.async_set_unique_id(user_id)
                 self._abort_if_unique_id_configured()
                 return self.async_create_entry(
-                    title="Mealie",
+                    title="Mealie Meal Times",
                     data=user_input,
                 )
         return self.async_show_form(

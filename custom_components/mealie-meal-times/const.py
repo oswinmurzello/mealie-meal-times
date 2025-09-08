@@ -4,7 +4,7 @@ import logging
 
 from awesomeversion import AwesomeVersion
 
-DOMAIN = "mealie"
+DOMAIN = "mealie-meal-times"
 
 LOGGER = logging.getLogger(__package__)
 
