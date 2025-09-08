@@ -4,7 +4,6 @@ from collections.abc import Callable
 from dataclasses import dataclass
 
 from aiomealie import Statistics
-
 from homeassistant.components.sensor import (
     SensorEntity,
     SensorEntityDescription,

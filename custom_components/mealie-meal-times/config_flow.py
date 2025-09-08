@@ -3,14 +3,13 @@
 from collections.abc import Mapping
 from typing import Any
 
+import voluptuous as vol
 from aiomealie import (
     MealieAuthenticationError,
     MealieClient,
     MealieConnectionError,
     MealplanEntryType,
 )
-import voluptuous as vol
-
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 from homeassistant.const import CONF_API_TOKEN, CONF_HOST, CONF_VERIFY_SSL
 from homeassistant.helpers import selector

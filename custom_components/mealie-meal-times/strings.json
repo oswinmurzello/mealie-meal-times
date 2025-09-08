@@ -13,9 +13,9 @@
           "verify_ssl": "[%key:common::config_flow::data::verify_ssl%]"
         },
         "data_description": {
-          "host": "[%key:component::mealie::common::data_description_host%]",
-          "api_token": "[%key:component::mealie::common::data_description_api_token%]",
-          "verify_ssl": "[%key:component::mealie::common::data_description_verify_ssl%]"
+          "host": "[%key:component::mealie-meal-times::common::data_description_host%]",
+          "api_token": "[%key:component::mealie-meal-times::common::data_description_api_token%]",
+          "verify_ssl": "[%key:component::mealie-meal-times::common::data_description_verify_ssl%]"
         }
       },
       "reauth_confirm": {
@@ -24,7 +24,7 @@
           "api_token": "[%key:common::config_flow::data::api_token%]"
         },
         "data_description": {
-          "api_token": "[%key:component::mealie::common::data_description_api_token%]"
+          "api_token": "[%key:component::mealie-meal-times::common::data_description_api_token%]"
         }
       },
       "reconfigure": {
@@ -35,9 +35,9 @@
           "verify_ssl": "[%key:common::config_flow::data::verify_ssl%]"
         },
         "data_description": {
-          "host": "[%key:component::mealie::common::data_description_host%]",
-          "api_token": "[%key:component::mealie::common::data_description_api_token%]",
-          "verify_ssl": "[%key:component::mealie::common::data_description_verify_ssl%]"
+          "host": "[%key:component::mealie-meal-times::common::data_description_host%]",
+          "api_token": "[%key:component::mealie-meal-times::common::data_description_api_token%]",
+          "verify_ssl": "[%key:component::mealie-meal-times::common::data_description_verify_ssl%]"
         }
       }
     },
@@ -170,8 +170,8 @@
       "description": "Gets a recipe from Mealie",
       "fields": {
         "config_entry_id": {
-          "name": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::name%]",
-          "description": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::description%]"
+          "name": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::name%]",
+          "description": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::description%]"
         },
         "recipe_id": {
           "name": "Recipe ID or slug",
@@ -184,8 +184,8 @@
       "description": "Searches for recipes with any matching properties in Mealie",
       "fields": {
         "config_entry_id": {
-          "name": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::name%]",
-          "description": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::description%]"
+          "name": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::name%]",
+          "description": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::description%]"
         },
         "search_terms": {
           "name": "Search terms",
@@ -202,8 +202,8 @@
       "description": "Imports a recipe from an URL",
       "fields": {
         "config_entry_id": {
-          "name": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::name%]",
-          "description": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::description%]"
+          "name": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::name%]",
+          "description": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::description%]"
         },
         "url": {
           "name": "URL to the recipe",
@@ -220,8 +220,8 @@
       "description": "Sets a random mealplan for a specific date",
       "fields": {
         "config_entry_id": {
-          "name": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::name%]",
-          "description": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::description%]"
+          "name": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::name%]",
+          "description": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::description%]"
         },
         "date": {
           "name": "Date",
@@ -238,15 +238,15 @@
       "description": "Sets a mealplan for a specific date",
       "fields": {
         "config_entry_id": {
-          "name": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::name%]",
-          "description": "[%key:component::mealie::services::get_mealplan::fields::config_entry_id::description%]"
+          "name": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::name%]",
+          "description": "[%key:component::mealie-meal-times::services::get_mealplan::fields::config_entry_id::description%]"
         },
         "date": {
-          "name": "[%key:component::mealie::services::set_random_mealplan::fields::date::name%]",
-          "description": "[%key:component::mealie::services::set_random_mealplan::fields::date::description%]"
+          "name": "[%key:component::mealie-meal-times::services::set_random_mealplan::fields::date::name%]",
+          "description": "[%key:component::mealie-meal-times::services::set_random_mealplan::fields::date::description%]"
         },
         "entry_type": {
-          "name": "[%key:component::mealie::services::set_random_mealplan::fields::entry_type::name%]",
+          "name": "[%key:component::mealie-meal-times::services::set_random_mealplan::fields::entry_type::name%]",
           "description": "The type of dish to set the recipe to."
         },
         "recipe_id": {
@@ -267,10 +267,10 @@
   "selector": {
     "mealplan_entry_type": {
       "options": {
-        "breakfast": "[%key:component::mealie::entity::calendar::breakfast::name%]",
-        "lunch": "[%key:component::mealie::entity::calendar::lunch::name%]",
-        "dinner": "[%key:component::mealie::entity::calendar::dinner::name%]",
-        "side": "[%key:component::mealie::entity::calendar::side::name%]"
+        "breakfast": "[%key:component::mealie-meal-times::entity::calendar::breakfast::name%]",
+        "lunch": "[%key:component::mealie-meal-times::entity::calendar::lunch::name%]",
+        "dinner": "[%key:component::mealie-meal-times::entity::calendar::dinner::name%]",
+        "side": "[%key:component::mealie-meal-times::entity::calendar::side::name%]"
       }
     }
   }
