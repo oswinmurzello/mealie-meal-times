@@ -1,0 +1,15 @@
+{
+    "domain": "mealie-meal-times",
+    "name": "Mealie Meal Times",
+    "codeowners": [
+        "@oswinmurzello"
+    ],
+    "dependencies": [],
+    "documentation": "https://github.com/oswinmurzello/core/",
+    "issue_tracker": "https://github.com/oswinmurzello/core/issues",
+    "requirements": [
+        "aiomealie==0.10.2"
+    ],
+    "hide_default_branch": true,
+    "version": "1.0.0"
+}
