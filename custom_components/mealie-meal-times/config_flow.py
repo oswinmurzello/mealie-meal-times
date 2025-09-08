@@ -39,7 +39,7 @@ USER_SCHEMA = vol.Schema(
         vol.Required(CONF_API_TOKEN): str,
         vol.Optional(CONF_VERIFY_SSL, default=True): bool,
     }
-)
+).extend(OPTIONS_SCHEMA.schema)
 REAUTH_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_API_TOKEN): str,
