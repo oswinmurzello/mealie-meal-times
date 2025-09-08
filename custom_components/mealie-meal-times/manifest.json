@@ -1,6 +1,7 @@
 {
   "domain": "mealie-meal-times",
   "name": "Mealie Meal Times",
+  "version": "1.0.0",
   "codeowners": [
     "@oswinmurzello"
   ],
