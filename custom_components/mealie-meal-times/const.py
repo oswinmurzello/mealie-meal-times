@@ -4,7 +4,7 @@ import logging
 
 from awesomeversion import AwesomeVersion
 
-DOMAIN = "mealie-meal-times"
+DOMAIN = "mealie"
 
 LOGGER = logging.getLogger(__package__)
 
@@ -20,3 +20,9 @@ ATTR_SEARCH_TERMS = "search_terms"
 ATTR_RESULT_LIMIT = "result_limit"
 
 MIN_REQUIRED_MEALIE_VERSION = AwesomeVersion("v1.0.0")
+
+
+BREAKFAST_TIME = "Lunch Time"
+LUNCH_TIME = "Lunch Time"
+DINNER_TIME = "Lunch Time"
+SIDE_TIME = "Side Time"
