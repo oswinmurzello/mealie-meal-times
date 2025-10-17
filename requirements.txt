@@ -1,3 +1,3 @@
 homeassistant==2025.9.1
 pip>=21.3.1
-aiomealie==0.10.2
+aiomealie==1.0.1
